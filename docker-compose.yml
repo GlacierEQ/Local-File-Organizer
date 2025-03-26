@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  ai-processor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./documents:/app/documents
+      - ./consolidated_documents:/app/consolidated_documents
+      - ./logs:/app/logs
+      - ./diagnostic_reports:/app/diagnostic_reports
+      - ./benchmark_results:/app/benchmark_results
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0 if all([os.path.exists(d) for d in ['documents', 'logs']]) else 1)"]
+      interval: 30s
+      timeout: 30s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+
+  benchmark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python run_benchmarks.py
+    volumes:
+      - ./benchmark_results:/app/benchmark_results
+    depends_on:
+      - ai-processor
+
+  diagnostics:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python run_diagnostics.py
+    volumes:
+      - ./diagnostic_reports:/app/diagnostic_reports
+      - ./logs:/app/logs
+    depends_on:
+      - ai-processor
+
+  maintenance:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python schedule_diagnostics.py --run
+    volumes:
+      - ./logs:/app/logs
+      - ./diagnostic_reports:/app/diagnostic_reports
+    depends_on:
+      - ai-processor
+    deploy:
+      restart_policy:
+        condition: none
+
+networks:
+  default:
+    name: ai-processor-network
+    driver: bridge
+
+volumes:
+  documents:
+    driver: local
+  consolidated_documents:
+    driver: local
+  logs:
+    driver: local
+  diagnostic_reports:
+    driver: local
+  benchmark_results:
+    driver: local

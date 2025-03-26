@@ -1,0 +1,52 @@
+{
+  "laws": {
+    "HRS_123": {
+      "title": "Hawaii Revised Statutes § 123",
+      "description": "Description of the statute.",
+      "sections": [
+        {
+          "section_number": "123-1",
+          "text": "Text of section 123-1."
+        }
+      ]
+    }
+  },
+  "rules_of_procedure": {
+    "Rule_1": {
+      "title": "Rule 1: Scope of Rules",
+      "description": "These rules govern the procedure in all civil actions."
+    },
+    "Rule_6": {
+      "title": "Rule 6: Time",
+      "description": "Computation of time; extensions."
+    },
+    "Rule_12": {
+      "title": "Rule 12: Defenses and Objections",
+      "description": "How to raise defenses and objections."
+    }
+  },
+  "rules_of_evidence": {
+    "Rule_401": {
+      "title": "Rule 401: Test for Relevant Evidence",
+      "description": "Evidence is relevant if it has any tendency to make a fact more or less probable."
+    },
+    "Rule_402": {
+      "title": "Rule 402: General Admissibility of Relevant Evidence",
+      "description": "Relevant evidence is admissible unless otherwise provided by law."
+    }
+  },
+  "deadlines": {
+    "filing_deadline": {
+      "description": "Deadline for filing motions.",
+      "time_limit": "30 days from the date of service."
+    },
+    "discovery_deadline": {
+      "description": "Deadline for completing discovery.",
+      "time_limit": "90 days from the date of the initial scheduling conference."
+    },
+    "exhibit_submission_deadline": {
+      "description": "Deadline for submitting exhibits.",
+      "time_limit": "10 days before the trial date."
+    }
+  }
+}

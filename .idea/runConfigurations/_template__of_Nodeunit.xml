@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="true" type="NodeunitConfigurationType" factoryName="Nodeunit" editBeforeRun="true" focusToolWindowBeforeRun="true" singleton="false">
+    <setting name="nodePath" value="$APPLICATION_CONFIG_DIR$/node/versions/22.11.0/node" />
+    <envs />
+    <setting name="nodeunitModuleDir" value="$PROJECT_DIR$" />
+    <setting name="workingDirectory" value="$PROJECT_DIR$" />
+    <setting name="testType" value="DIRECTORY" />
+    <setting name="directory" value="$PROJECT_DIR$/../.." />
+    <method v="2" />
+  </configuration>
+</component>

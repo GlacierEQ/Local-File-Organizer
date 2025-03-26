@@ -1,0 +1,17 @@
+# Core system monitoring
+psutil>=5.8.0
+setuptools>=65.5.1  # For pkg_resources
+
+# Optional enhancements
+py-cpuinfo>=8.0.0  # For detailed CPU information
+memory_profiler>=0.60.0  # For memory profiling
+gputil>=1.4.0  # For GPU information if available
+
+# Output formatting
+tabulate>=0.8.9  # For formatted table output
+colorama>=0.4.4  # For colored console output
+
+# Dependencies from other requirements
+-r requirements-ai.txt
+-r requirements-test.txt
+-r requirements-benchmark.txt

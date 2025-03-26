@@ -1,0 +1,105 @@
+MIT License
+
+Copyright (c) 2024 AI Document Processing System
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Third-Party Software Notices:
+
+This software includes the following third-party components:
+
+1. Tesseract OCR
+   - License: Apache License 2.0
+   - Website: https://github.com/tesseract-ocr/tesseract
+
+2. Python-docx
+   - License: MIT License
+   - Website: https://github.com/python-openxml/python-docx
+
+3. Pillow
+   - License: HPND License
+   - Website: https://github.com/python-pillow/Pillow
+
+4. NLTK
+   - License: Apache License 2.0
+   - Website: https://www.nltk.org/
+
+5. spaCy
+   - License: MIT License
+   - Website: https://spacy.io/
+
+6. PyMuPDF
+   - License: GNU GPL v3
+   - Website: https://github.com/pymupdf/PyMuPDF
+
+7. NumPy
+   - License: BSD License
+   - Website: https://numpy.org/
+
+8. Matplotlib
+   - License: PSF License
+   - Website: https://matplotlib.org/
+
+9. psutil
+   - License: BSD License
+   - Website: https://github.com/giampaolo/psutil
+
+Each of these components may have its own third-party dependencies. Please refer
+to their respective documentation for complete licensing information.
+
+Usage of Third-Party Components:
+
+The inclusion of GPL-licensed components (such as PyMuPDF) as optional dependencies
+does not affect the MIT licensing of this project's original code. However, if you
+choose to use these optional components, your usage must comply with their respective
+licenses.
+
+Data Processing Notice:
+
+This software is designed to process documents while maintaining their integrity.
+Users are responsible for ensuring they have the necessary rights and permissions
+to process any documents using this software.
+
+Privacy Notice:
+
+This software processes documents locally on your machine. No data is transmitted
+to external servers. Users are responsible for maintaining the security and
+privacy of their documents.
+
+Contribution Notice:
+
+By contributing to this project, you agree that your contributions will be
+licensed under the same MIT License that covers the project. If you don't agree
+with these terms, please do not contribute to the project.
+
+Commercial Use:
+
+This software may be used for commercial purposes. However, users are responsible
+for ensuring their use complies with all applicable laws and regulations,
+particularly regarding document processing and privacy.
+
+Disclaimer:
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. THE AUTHORS OR
+COPYRIGHT HOLDERS SHALL NOT BE LIABLE FOR ANY CLAIMS, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+For questions about licensing or usage, please create an issue in the project
+repository.

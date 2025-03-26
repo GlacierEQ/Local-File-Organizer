@@ -76,21 +76,37 @@ Please update the project by deleting the original project folder and reinstalli
 - [ ] Dockerfile for easier installation
 - [ ] People from [Nexa](https://github.com/NexaAI/nexa-sdk) is helping me to make executables for macOS, Linux and Windows
 
-## What It Does 🔍
+## Features and Capabilities 🚀
 
-This intelligent file organizer harnesses the power of advanced AI models, including language models (LMs) and vision-language models (VLMs), to automate the process of organizing files by:
+This intelligent file organizer harnesses the power of advanced AI models, including language models (LMs) and vision-language models (VLMs), to automate the process of organizing files. Here's what it can do:
 
+### Core Features
 
-* Scanning a specified input directory for files.
-* Content Understanding: 
-  - **Textual Analysis**: Uses the [Llama3.2 3B](https://nexaai.com/meta/Llama3.2-3B-Instruct/gguf-q3_K_M/file) to analyze and summarize text-based content, generating relevant descriptions and filenames.
-  - **Visual Content Analysis**: Uses the [LLaVA-v1.6](https://nexaai.com/liuhaotian/llava-v1.6-vicuna-7b/gguf-q4_0/file) , based on Vicuna-7B, to interpret visual files such as images, providing context-aware categorization and descriptions.
+- **Multiple Organization Modes**:
+  - Content-based organization using AI
+  - Date-based organization
+  - Type-based organization
+  - Interactive checklist mode for manual review
+- **AI-Powered Content Understanding**: 
+  - **Textual Analysis**: Uses the [Llama3.2 3B](https://nexaai.com/meta/Llama3.2-3B-Instruct/gguf-q3_K_M/file) to analyze and summarize text-based content.
+  - **Visual Content Analysis**: Uses the [LLaVA-v1.6](https://nexaai.com/liuhaotian/llava-v1.6-vicuna-7b/gguf-q4_0/file) to interpret visual files.
+- **Privacy-First**: All AI processing happens 100% on your local device using the [Nexa SDK](https://github.com/NexaAI/nexa-sdk).
+- **Preview Changes**: Review proposed changes before execution.
+- **Silent Mode**: Operate with logging for quieter execution.
+- **Performance Optimization**: Utilizes caching and parallel processing for improved speed.
+- **Robust Error Handling**: Comprehensive error recovery and logging mechanisms.
 
-* Understanding the content of your files (text, images, and more) to generate relevant descriptions, folder names, and filenames.
-* Organizing the files into a new directory structure based on the generated metadata.
+### AI Capabilities 🧠
 
-The best part? All AI processing happens 100% on your local device using the [Nexa SDK](https://github.com/NexaAI/nexa-sdk). No internet connection required, no data leaves your computer, and no AI API is needed - keeping your files completely private and secure.
+- **Multi-Format Support**: Processes various file types including TXT, PDF, and images (JPG/PNG) through OCR capabilities.
+- **Advanced Analysis**:
+  - Document summarization
+  - Entity recognition (especially useful for legal documents)
+  - Question answering over documents
+- **OCR Processing**: Text extraction from scanned documents and images.
+- **Validation**: File type verification and content hashing for data integrity.
 
+These capabilities make the system especially powerful for managing complex document sets like legal files, research papers, or mixed media collections.
 
 ## Supported File Types 📁
 
@@ -99,6 +115,28 @@ The best part? All AI processing happens 100% on your local device using the [Ne
 - **Spreadsheets:** `.xlsx`, `.csv`
 - **Presentations:** `.ppt`, `.pptx`
 - **PDFs:** `.pdf`
+- **Legal Documents**: Various formats supported
+
+## System Architecture
+
+The Local File Organizer is built with a modular architecture focusing on maintainability and extensibility:
+
+### Core Components
+
+1. **System Manager** (`system_manager_new.py`): Manages system initialization, dependency checks, and system lifecycle.
+2. **Database** (`database_new.py`): SQLite-based storage for operation tracking, AI result caching, and user preferences.
+3. **Configuration** (`config.py`): Manages system settings, model configurations, and organization rules.
+4. **Error Handler** (`error_handler.py`): Provides comprehensive error handling and logging.
+5. **Performance Optimizer** (`performance.py`): Implements caching, memory management, and parallel processing.
+
+### File Processing Modules
+
+- `file_utils.py`: Core file operations
+- `data_processing_common.py`: Common processing functions
+- `text_data_processing.py`: Text file processing
+- `image_data_processing.py`: Image file processing
+- `legal_data_processing.py`: Legal document processing
+
 
 ## Prerequisites 💻
 
@@ -182,8 +220,18 @@ With the environment activated and dependencies installed, run the script using:
 
 ### 6. Running the Script🎉
 ```zsh
-python main.py
+python main_optimized.py
 ```
+
+Note: We've introduced an optimized version of the main script (`main_optimized.py`) that includes memory-efficient processing and batch operations. This version is recommended for large datasets or systems with limited memory.
+
+Key optimizations in `main_optimized.py`:
+- Uses generators for file path collection to reduce memory usage
+- Processes files in batches to manage memory more effectively
+- Implements lazy loading and caching of AI models
+- Optimizes imports to reduce memory footprint
+
+If you encounter any issues with the optimized version, you can still use the original `main.py` script.
 
 ## Notes
 

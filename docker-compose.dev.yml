@@ -1,0 +1,133 @@
+version: '3.8'
+
+services:
+  ai-processor:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder  # Use builder stage for development
+    volumes:
+      # Mount source code for development
+      - .:/app
+      # Mount virtual environment
+      - venv:/opt/venv
+      # Mount data directories
+      - ./documents:/app/documents
+      - ./consolidated_documents:/app/consolidated_documents
+      - ./logs:/app/logs
+      - ./diagnostic_reports:/app/diagnostic_reports
+      - ./benchmark_results:/app/benchmark_results
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - DEBUG=1
+      - DEVELOPMENT=1
+    ports:
+      - "8000:8000"
+      - "5678:5678"  # For debugger
+    command: python -m debugpy --listen 0.0.0.0:5678 manage_system.py
+    # Enable ptrace for debugger
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_PTRACE
+
+  dev-tools:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    volumes:
+      - .:/app
+      - venv:/opt/venv
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - DEBUG=1
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    volumes:
+      - .:/app
+      - venv:/opt/venv
+      - ./tests:/app/tests
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - TESTING=1
+    command: python -m pytest tests/ -v --cov=. --cov-report=html
+
+  linter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    volumes:
+      - .:/app
+      - venv:/opt/venv
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+    command: |
+      bash -c "
+        black . --check &&
+        ruff check . &&
+        mypy . &&
+        pylint **/*.py
+      "
+
+  docs-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    volumes:
+      - .:/app
+      - venv:/opt/venv
+      - ./docs:/app/docs
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+    ports:
+      - "8080:8080"
+    command: pdoc --http 0.0.0.0:8080 .
+
+  benchmark-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    volumes:
+      - .:/app
+      - venv:/opt/venv
+      - ./benchmark_results:/app/benchmark_results
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - DEVELOPMENT=1
+    command: python run_benchmarks.py --debug
+
+networks:
+  default:
+    name: ai-processor-dev-network
+    driver: bridge
+
+volumes:
+  venv:
+    name: ai-processor-dev-venv
+  documents:
+    name: ai-processor-dev-documents
+  consolidated_documents:
+    name: ai-processor-dev-consolidated
+  logs:
+    name: ai-processor-dev-logs
+  diagnostic_reports:
+    name: ai-processor-dev-diagnostics
+  benchmark_results:
+    name: ai-processor-dev-benchmarks

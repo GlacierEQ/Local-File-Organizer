@@ -1,0 +1,16 @@
+{
+    "scan_paths": [
+        "sample_data/legal_documents",
+        "docs"
+    ],
+    "output_root": "organized_legal_files",
+    "file_types": {
+        "documents": [".doc", ".docx", ".pdf"],
+        "images": [".png", ".jpg", ".gif"],
+        "data": [".csv", ".xlsx"]
+    },
+    "retention_policy": {
+        "days": 365,
+        "archive": true
+    }
+}

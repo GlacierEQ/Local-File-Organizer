@@ -1,0 +1,11 @@
+# Core dependencies
+-r requirements-ai.txt
+
+# Benchmarking dependencies
+matplotlib>=3.5.0
+numpy>=1.21.0
+psutil>=5.8.0
+
+# Optional dependencies for enhanced visualizations
+seaborn>=0.11.0  # For prettier plots
+pandas>=1.3.0    # For data manipulation

@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="hi" type="DatabaseScript" editBeforeRun="true" focusToolWindowBeforeRun="true" singleton="false">
+    <script-mode>FILE</script-mode>
+    <data-source id="ba26f2a9-e42c-4250-9652-89f64291e185" />
+    <method v="2" />
+  </configuration>
+</component>

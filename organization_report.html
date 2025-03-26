@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Organization Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .stat-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+        .chart {
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        .change-list {
+            list-style: none;
+            padding: 0;
+        }
+        .change-item {
+            padding: 8px;
+            margin: 4px 0;
+            border-radius: 4px;
+        }
+        .change-new { background: #e3f2fd; }
+        .change-modified { background: #fff3e0; }
+        .change-deleted { background: #ffebee; }
+        .change-moved { background: #f3e5f5; }
+        .icon {
+            margin-right: 8px;
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>File Organization Report</h1>
+        <div class="stat-grid">
+            <div class="stat-box">
+                <div class="stat-value">60</div>
+                <div class="stat-label">Total Files</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">20.8MB</div>
+                <div class="stat-label">Total Size</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">10</div>
+                <div class="stat-label">File Types</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>File Types Distribution</h2>
+            <canvas id="typeChart" class="chart"></canvas>
+        </div>
+
+        <div class="card">
+            <h2>Size Distribution</h2>
+            <canvas id="sizeChart" class="chart"></canvas>
+        </div>
+
+        <div class="card">
+            <h2>Recent Changes</h2>
+            <ul class="change-list">
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Type distribution chart
+        new Chart(document.getElementById('typeChart'), {
+            type: 'pie',
+            data: {
+                labels: [&quot;.jpg&quot;, &quot;.gif&quot;, &quot;.png&quot;, &quot;.csv&quot;, &quot;.pptx&quot;, &quot;.docx&quot;, &quot;.pdf&quot;, &quot;.md&quot;, &quot;.txt&quot;, &quot;.xlsx&quot;],
+                datasets: [{
+                    data: [4, 4, 8, 4, 4, 4, 4, 4, 20, 4],
+                    backgroundColor: [
+                        '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+                        '#FF9F40', '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'
+                    ]
+                }]
+            }
+        });
+
+        // Size distribution chart
+        new Chart(document.getElementById('sizeChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Small (<1MB)', 'Medium (1-10MB)', 'Large (>10MB)'],
+                datasets: [{
+                    label: 'Number of Files',
+                    data: [56, 4, 0],
+                    backgroundColor: ['#36A2EB', '#FFCE56', '#FF6384']
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
