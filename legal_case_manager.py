@@ -39,4 +39,12 @@ class LegalCaseManager:
         Path(path).write_bytes(self.org.SerializeToString())
 
     def load_from_file(self, path: str) -> None:
-        self.org.ParseFromString(Path(path).read_bytes())
+# import os
+# import pathlib
+
+def load_from_file(self, path: str) -> None:
+    safe_path = os.path.abspath(os.path.join(os.path.dirname(__file__), path))
+    if safe_path.startswith(os.path.dirname(__file__)):
+        self.org.ParseFromString(pathlib.Path(safe_path).read_bytes())
+    else:
+        raise ValueError("Invalid file path")
