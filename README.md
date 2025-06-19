@@ -52,22 +52,22 @@ After:
 ## Updates 🚀
 
 **[2024/09] v0.0.2**:
-* Featured by [Nexa Gallery](https://nexaai.com/gallery) and [Nexa SDK Cookbook](https://github.com/NexaAI/nexa-sdk/tree/main/examples)!
-* Dry Run Mode: check sorting results before committing changes
-* Silent Mode: save all logs to a txt file for quieter operation
-* Added file support:  `.md`, .`excel`, `.ppt`, and `.csv` 
-* Three sorting options: by content, by date, and by type
-* The default text model is now [Llama3.2 3B](https://nexaai.com/meta/Llama3.2-3B-Instruct/gguf-q3_K_M/file)
-* Improved CLI interaction experience
-* Added real-time progress bar for file analysis
+
+- Featured by [Nexa Gallery](https://nexaai.com/gallery) and [Nexa SDK Cookbook](https://github.com/NexaAI/nexa-sdk/tree/main/examples)!
+- Dry Run Mode: check sorting results before committing changes
+- Silent Mode: save all logs to a txt file for quieter operation
+- Added file support: `.md`, .`excel`, `.ppt`, and `.csv`
+- Three sorting options: by content, by date, and by type
+- The default text model is now [Llama3.2 3B](https://nexaai.com/meta/Llama3.2-3B-Instruct/gguf-q3_K_M/file)
+- Improved CLI interaction experience
+- Added real-time progress bar for file analysis
 
 Please update the project by deleting the original project folder and reinstalling the requirements. Refer to the installation guide from Step 4.
-
 
 ## Roadmap 📅
 
 - [ ] Copilot Mode: chat with AI to tell AI how you want to sort the file (ie. read and rename all the PDFs)
-- [ ] Change models with CLI 
+- [ ] Change models with CLI
 - [ ] ebook format support
 - [ ] audio file support
 - [ ] video file support
@@ -86,8 +86,10 @@ This intelligent file organizer harnesses the power of advanced AI models, inclu
   - Content-based organization using AI
   - Date-based organization
   - Type-based organization
+    - Semantic hierarchy mode for deep category/year organization with optional cross-references
+  - Protocol Buffer schema for legal case management hierarchies
   - Interactive checklist mode for manual review
-- **AI-Powered Content Understanding**: 
+- **AI-Powered Content Understanding**:
   - **Textual Analysis**: Uses the [Llama3.2 3B](https://nexaai.com/meta/Llama3.2-3B-Instruct/gguf-q3_K_M/file) to analyze and summarize text-based content.
   - **Visual Content Analysis**: Uses the [LLaVA-v1.6](https://nexaai.com/liuhaotian/llava-v1.6-vicuna-7b/gguf-q4_0/file) to interpret visual files.
 - **Privacy-First**: All AI processing happens 100% on your local device using the [Nexa SDK](https://github.com/NexaAI/nexa-sdk).
@@ -95,6 +97,7 @@ This intelligent file organizer harnesses the power of advanced AI models, inclu
 - **Silent Mode**: Operate with logging for quieter execution.
 - **Performance Optimization**: Utilizes caching and parallel processing for improved speed.
 - **Robust Error Handling**: Comprehensive error recovery and logging mechanisms.
+- Operator Command Center GUI for monitoring and teaching AI
 
 ### AI Capabilities 🧠
 
@@ -137,7 +140,6 @@ The Local File Organizer is built with a modular architecture focusing on mainta
 - `image_data_processing.py`: Image file processing
 - `legal_data_processing.py`: Legal document processing
 
-
 ## Prerequisites 💻
 
 - **Operating System:** Compatible with Windows, macOS, and Linux.
@@ -153,7 +155,7 @@ The Local File Organizer is built with a modular architecture focusing on mainta
 
 Before installing the Local File Organizer, make sure you have Python installed on your system. We recommend using Python 3.12 or later.
 
-You can download Python from [the official website]((https://www.python.org/downloads/)).
+You can download Python from [the official website](<(https://www.python.org/downloads/)>).
 
 Follow the installation instructions for your operating system.
 
@@ -184,25 +186,31 @@ conda activate local_file_organizer
 ### 4. Install Nexa SDK ️
 
 #### CPU Installation
+
 To install the CPU version of Nexa SDK, run:
+
 ```bash
 pip install nexaai --prefer-binary --index-url https://nexaai.github.io/nexa-sdk/whl/cpu --extra-index-url https://pypi.org/simple --no-cache-dir
 ```
 
 #### GPU Installation (Metal - macOS)
+
 For the GPU version supporting Metal (macOS), run:
+
 ```bash
 CMAKE_ARGS="-DGGML_METAL=ON -DSD_METAL=ON" pip install nexaai --prefer-binary --index-url https://nexaai.github.io/nexa-sdk/whl/metal --extra-index-url https://pypi.org/simple --no-cache-dir
 ```
+
 For detailed installation instructions of Nexa SDK for **CUDA** and **AMD GPU** support, please refer to the [Installation section](https://github.com/NexaAI/nexa-sdk?tab=readme-ov-file#installation) in the main README.
 
-
-### 5. Install Dependencies 
+### 5. Install Dependencies
 
 1. Ensure you are in the project directory:
+
    ```zsh
    cd path/to/Local-File-Organizer
    ```
+
    Replace `path/to/Local-File-Organizer` with the actual path where you cloned or extracted the project.
 
 2. Install the required dependencies:
@@ -219,6 +227,7 @@ pip install nexa Pillow pytesseract PyMuPDF python-docx
 With the environment activated and dependencies installed, run the script using:
 
 ### 6. Running the Script🎉
+
 ```zsh
 python main_optimized.py
 ```
@@ -226,6 +235,7 @@ python main_optimized.py
 Note: We've introduced an optimized version of the main script (`main_optimized.py`) that includes memory-efficient processing and batch operations. This version is recommended for large datasets or systems with limited memory.
 
 Key optimizations in `main_optimized.py`:
+
 - Uses generators for file path collection to reduce memory usage
 - Processes files in batches to manage memory more effectively
 - Implements lazy loading and caching of AI models
@@ -236,12 +246,13 @@ If you encounter any issues with the optimized version, you can still use the or
 ## Notes
 
 - **SDK Models:**
+
   - The script uses `NexaVLMInference` and `NexaTextInference` models [usage](https://docs.nexaai.com/sdk/python-interface/gguf).
   - Ensure you have access to these models and they are correctly set up.
   - You may need to download model files or configure paths.
 
-
 - **Dependencies:**
+
   - **pytesseract:** Requires Tesseract OCR installed on your system.
     - **macOS:** `brew install tesseract`
     - **Ubuntu/Linux:** `sudo apt-get install tesseract-ocr`
@@ -249,6 +260,7 @@ If you encounter any issues with the optimized version, you can still use the or
   - **PyMuPDF (fitz):** Used for reading PDFs.
 
 - **Processing Time:**
+
   - Processing may take time depending on the number and size of files.
   - The script uses multiprocessing to improve performance.
 
