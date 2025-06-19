@@ -86,6 +86,7 @@ This intelligent file organizer harnesses the power of advanced AI models, inclu
   - Content-based organization using AI
   - Date-based organization
   - Type-based organization
+    - Semantic hierarchy mode for deep category/year organization with optional cross-references
   - Interactive checklist mode for manual review
 - **AI-Powered Content Understanding**: 
   - **Textual Analysis**: Uses the [Llama3.2 3B](https://nexaai.com/meta/Llama3.2-3B-Instruct/gguf-q3_K_M/file) to analyze and summarize text-based content.
@@ -95,6 +96,7 @@ This intelligent file organizer harnesses the power of advanced AI models, inclu
 - **Silent Mode**: Operate with logging for quieter execution.
 - **Performance Optimization**: Utilizes caching and parallel processing for improved speed.
 - **Robust Error Handling**: Comprehensive error recovery and logging mechanisms.
+- Operator Command Center GUI for monitoring and teaching AI
 
 ### AI Capabilities 🧠
 
