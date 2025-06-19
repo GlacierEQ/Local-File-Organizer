@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package legal.organization;
+
+option java_package = "com.hiclass.legal.organization";
+option go_package = "github.com/hiclass/legal/organization";
+option optimize_for = SPEED;
+
+message Document {
+  string id = 1;
+  string name = 2;
+  string type = 3;
+  int32 version = 4;
+  string path = 5;
+  map<string,string> metadata = 6;
+  int64 created_at = 7;
+}
+
+message WorkflowStage {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  int32 order = 4;
+}
+
+message Case {
+  string id = 1;
+  string title = 2;
+  string practice_area = 3;
+  string jurisdiction = 4;
+  string status = 5;
+  repeated Case sub_cases = 6;
+  repeated Document documents = 7;
+  repeated WorkflowStage workflow = 8;
+}
+
+message LegalOrganization {
+  repeated Case cases = 1;
+}
