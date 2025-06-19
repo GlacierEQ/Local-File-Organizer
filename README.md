@@ -96,6 +96,7 @@ This intelligent file organizer harnesses the power of advanced AI models, inclu
 - **Silent Mode**: Operate with logging for quieter execution.
 - **Performance Optimization**: Utilizes caching and parallel processing for improved speed.
 - **Robust Error Handling**: Comprehensive error recovery and logging mechanisms.
+- Operator Command Center GUI for monitoring and teaching AI
 
 ### AI Capabilities 🧠
 
