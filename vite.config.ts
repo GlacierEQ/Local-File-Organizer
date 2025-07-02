@@ -1,11 +1,12 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+/* eslint-disable import/no-extraneous-dependencies */
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  root: ".",
+  root: '.',
   plugins: [react()],
   build: {
-    outDir: "dist",
+    outDir: 'dist',
     emptyOutDir: true,
   },
 });
