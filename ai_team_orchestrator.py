@@ -45,8 +45,7 @@ class AITeamOrchestrator:
         """Create rename operations based on file content."""
         operations: List[Dict[str, str]] = []
         for path in files:
-            new_name = self.rename_func(path)
-            if new_name:
+            if new_name := self.rename_func(path):
                 dest = os.path.join(os.path.dirname(path), new_name)
                 operations.append({"source": path, "destination": dest})
         return operations
