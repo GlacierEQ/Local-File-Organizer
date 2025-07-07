@@ -3,7 +3,11 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["airbnb", "airbnb/hooks", "plugin:@typescript-eslint/recommended"],
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -22,7 +26,7 @@
     }
   },
   "rules": {
-    "react/jsx-filename-extension": [1, {"extensions": [".tsx"]}],
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -31,7 +35,18 @@
         "tsx": "never"
       }
     ],
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/__tests__/**"]}],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/__tests__/**",
+          "**/*.test.{js,jsx,ts,tsx}",
+          "**/*.spec.{js,jsx,ts,tsx}",
+          "vite.config.ts",
+          "vitest.config.ts"
+        ]
+      }
+    ],
     "react/function-component-definition": [
       2,
       {

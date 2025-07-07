@@ -5,7 +5,11 @@ import unittest
 sys.path.insert(
     0, os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 )  # noqa: E402
-from file_summarizer import summarize_files, summarize_path  # noqa: E402
+from file_summarizer import (
+    summarize_files,
+    summarize_files_parallel,
+    summarize_path,
+)  # noqa: E402
 
 
 class FakeInference:
@@ -29,6 +33,17 @@ class TestSummarizer(unittest.TestCase):
 
         os.remove(test_file)
 
+    def test_summarize_files_parallel(self):
+        test_file = "sample_test.txt"
+        with open(test_file, "w") as f:
+            f.write("This is a sample text file. It has two sentences.")
+
+        summaries = summarize_files_parallel([test_file], FakeInference(), workers=2)
+        self.assertIn(test_file, summaries)
+        self.assertEqual(summaries[test_file], "test summary")
+
+        os.remove(test_file)
+
     def test_summarize_path_directory(self):
         test_dir = "sample_dir"
         os.makedirs(test_dir, exist_ok=True)
@@ -39,7 +54,7 @@ class TestSummarizer(unittest.TestCase):
         with open(file2, "w") as f:
             f.write("Content of file two.")
 
-        summaries = summarize_path(test_dir, FakeInference())
+        summaries = summarize_path(test_dir, FakeInference(), parallel=True, workers=2)
         self.assertIn(file1, summaries)
         self.assertIn(file2, summaries)
 

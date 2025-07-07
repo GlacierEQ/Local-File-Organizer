@@ -1,5 +1,6 @@
 import argparse
 from typing import Dict, List
+from concurrent.futures import ThreadPoolExecutor
 
 from file_utils import (
     collect_file_paths,
@@ -29,7 +30,27 @@ def summarize_files(file_paths: List[str], text_inference) -> Dict[str, str]:
     return summaries
 
 
-def summarize_path(path: str, text_inference) -> Dict[str, str]:
+def summarize_files_parallel(
+    file_paths: List[str], text_inference, workers: int = 4
+) -> Dict[str, str]:
+    """Summarize files concurrently using a thread pool."""
+    summaries: Dict[str, str] = {}
+    _, text_files = separate_files_by_type(file_paths)
+
+    def process(path: str) -> None:
+        text = read_file_data(path)
+        if text:
+            summaries[path] = summarize_text_content(text, text_inference)
+
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        executor.map(process, text_files)
+
+    return summaries
+
+
+def summarize_path(
+    path: str, text_inference, *, parallel: bool = False, workers: int = 4
+) -> Dict[str, str]:
     """Summarize a single file or all files in a directory.
 
     Args:
@@ -45,12 +66,25 @@ def summarize_path(path: str, text_inference) -> Dict[str, str]:
     if not os.path.exists(path):
         raise FileNotFoundError(path)
     file_paths = collect_file_paths(path)
+    if parallel:
+        return summarize_files_parallel(file_paths, text_inference, workers=workers)
     return summarize_files(file_paths, text_inference)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Batch summarize documents")
     parser.add_argument("path", help="File or directory to summarize")
+    parser.add_argument(
+        "--parallel",
+        action="store_true",
+        help="Summarize files concurrently using threads",
+    )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=4,
+        help="Number of worker threads for parallel summarization",
+    )
     args = parser.parse_args()
 
     from nexa.gguf import NexaTextInference
@@ -68,5 +102,10 @@ if __name__ == "__main__":
             top_p=0.3,
             profiling=False,
         )
-    for file, summary in summarize_path(args.path, text_inference).items():
+    for file, summary in summarize_path(
+        args.path,
+        text_inference,
+        parallel=args.parallel,
+        workers=args.workers,
+    ).items():
         print(f"\n=== {file} ===\n{summary}\n")
