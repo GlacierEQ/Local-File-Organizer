@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AngularSettings">
+    <option name="innerServiceType" value="AUTO" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="98528936-1f66-4cb8-a97c-c903cba9fa12" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Local-File-Organizer.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Kekoa2018&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/QiuYannnn/Local-File-Organizer.git&quot;,
+    &quot;accountId&quot;: &quot;abeefa3c-0067-473d-9c9c-12d83690c691&quot;
+  }
+}</component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="oy9rzaxe" />
+  </component>
+  <component name="Make.Settings">
+    <option name="useCygwin" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2pS9WmdTTekP6PJ4FsGXmHG7k8k" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Database Script.hi.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;js.buildTools.grunt.grunt-cli.package&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/casey/OneDrive/Documents&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.kubernetes.view.ui.settings.KubernetesViewConfigurable&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.28467909&quot;,
+    &quot;typescript.add.unambiguous.imports.on.the.fly&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;ba26f2a9-e42c-4250-9652-89f64291e185&quot;
+    ],
+    &quot;stardust.markdown.MarkdownSplitEditorSuppressor:keyList&quot;: []
+  }
+}</component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="Local-File-Organizer" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="Local-File-Organizer" />
+      </console-settings>
+    </option>
+    <option name="myUseExistingConsole" value="true" />
+    <option name="myCommandQueueEnabled" value="true" />
+  </component>
+  <component name="PyDebuggerOptionsProvider">
+    <option name="mySaveCallSignatures" value="true" />
+    <option name="mySupportGeventDebugging" value="true" />
+    <option name="myDropIntoDebuggerOnFailedTests" value="true" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="open Local-File-Organizer" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" environment="&lt;No Environment&gt;" path="">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ReactNative" factoryName="React Native">
+      <node-interpreter value="project" />
+      <react-native value="" />
+      <platform value="ANDROID" />
+      <envs />
+      <only-packager />
+      <browser value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <method v="2">
+        <option name="ReactNativePackager" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="js.build_tools.grunt">
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
+        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="98528936-1f66-4cb8-a97c-c903cba9fa12" name="Changes" comment="" />
+      <created>1732748648079</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732748648079</updated>
+      <workItem from="1732748649304" duration="608000" />
+      <workItem from="1732763364100" duration="115000" />
+      <workItem from="1732764001570" duration="5812000" />
+      <workItem from="1732807966429" duration="540000" />
+      <workItem from="1732808548419" duration="36000" />
+      <workItem from="1732808607092" duration="579000" />
+      <workItem from="1732809212887" duration="2752000" />
+      <workItem from="1732822563516" duration="295000" />
+      <workItem from="1732826050822" duration="48000" />
+      <workItem from="1732829390999" duration="314000" />
+      <workItem from="1732840272133" duration="599000" />
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers>
+      <YouTrack />
+    </servers>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Local-File-Organizer.git2" />
+    </ignored-roots>
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="Local-File-Organizer" type="b2602c69:ProjectViewProjectNode" />
+        <item name="dir{file://C:/Users/casey/OneDrive/Documents/GitHub/Local-File-Organizer}" type="462c0819:PsiDirectoryNode" />
+      </path>
+      <path>
+        <item name="Local-File-Organizer" type="b2602c69:ProjectViewProjectNode" />
+        <item name="dir{file://C:/Users/casey/OneDrive/Documents/GitHub/Local-File-Organizer}" type="462c0819:PsiDirectoryNode" />
+        <item name="dir{file://C:/Users/casey/OneDrive/Documents/GitHub/Local-File-Organizer/sample_data}" type="462c0819:PsiDirectoryNode" />
+      </path>
+      <path>
+        <item name="Local-File-Organizer" type="b2602c69:ProjectViewProjectNode" />
+        <item name="dir{file://C:/Users/casey/OneDrive/Documents/GitHub/Local-File-Organizer}" type="462c0819:PsiDirectoryNode" />
+        <item name="dir{file://C:/Users/casey/OneDrive/Documents/GitHub/Local-File-Organizer/sample_data}" type="462c0819:PsiDirectoryNode" />
+        <item name="dir{file://C:/Users/casey/OneDrive/Documents/GitHub/Local-File-Organizer/sample_data/sub_dir1}" type="462c0819:PsiDirectoryNode" />
+      </path>
+      <path>
+        <item name="Local-File-Organizer" type="b2602c69:ProjectViewProjectNode" />
+        <item name="dir{file://C:/Users/casey/OneDrive/Documents/GitHub/Local-File-Organizer}" type="462c0819:PsiDirectoryNode" />
+        <item name="dir{file://C:/Users/casey/OneDrive/Documents/GitHub/Local-File-Organizer/sample_data}" type="462c0819:PsiDirectoryNode" />
+        <item name="dir{file://C:/Users/casey/OneDrive/Documents/GitHub/Local-File-Organizer/sample_data/sub_dir2}" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
+  </component>
+</project>
